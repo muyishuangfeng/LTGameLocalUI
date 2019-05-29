@@ -31,7 +31,7 @@ public class LoginActivity extends BaseAppActivity {
         String LTAppID = bundle.getString("LTAppID");
         String LTAppKey = bundle.getString("LTAppKey");
         String mAdID = bundle.getString("adID");
-        int mPackageID = bundle.getInt("packageID");
+        String mPackageID = bundle.getString("packageID");
 
         BundleData data = new BundleData();
         data.setAgreementUrl(mAgreementUrl);

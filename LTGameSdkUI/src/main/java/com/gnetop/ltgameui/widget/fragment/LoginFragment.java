@@ -34,7 +34,7 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener 
     String LTAppID;
     String LTAppKey;
     String mAdID;
-    int mPackageID;
+    String mPackageID;
     private static final int REQUEST_CODE = 0X01;
 
     public static LoginFragment newInstance(BundleData data) {
@@ -102,7 +102,7 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener 
         if (!TextUtils.isEmpty(LTAppID) &&
                 !TextUtils.isEmpty(LTAppKey) && !TextUtils.isEmpty(mAdID)) {
             GoogleLoginManager.onActivityResult(requestCode, data, REQUEST_CODE, mActivity,
-                    LTAppID, mPackageID,LTAppKey, mAdID,
+                    LTAppID, LTAppKey, mAdID,mPackageID,
                     new OnLoginSuccessListener() {
                         @Override
                         public void onSuccess(BaseEntry<ResultData> result) {

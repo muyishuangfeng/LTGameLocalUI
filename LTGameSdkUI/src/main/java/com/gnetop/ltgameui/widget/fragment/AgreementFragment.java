@@ -34,7 +34,7 @@ public class AgreementFragment extends BaseFragment implements View.OnClickListe
     String LTAppID;
     String LTAppKey;
     String mAdID;
-    int mPackageID;
+    String mPackageID;
 
 
     public static AgreementFragment newInstance(BundleData data) {

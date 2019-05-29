@@ -56,7 +56,7 @@ public class LoginUIManager {
      * @param mListener      登录接口
      */
     public void loginIn(final Activity activity, final String mAgreementUrl, final String mPrivacyUrl, final String googleClientID,
-                        final String LTAppID, final String LTAppKey, final String adID, final int mPackageID , final OnReLoginInListener mListener) {
+                        final String LTAppID, final String LTAppKey, final String adID, final String mPackageID , final OnReLoginInListener mListener) {
         if (isLoginStatus(activity)) {
             login(activity, mAgreementUrl, mPrivacyUrl, googleClientID, LTAppID, LTAppKey, adID,mPackageID);
         } else {
@@ -89,17 +89,17 @@ public class LoginUIManager {
 
     /**
      * 登出
-     *
-     * @param activity       上下文
+     *  @param activity       上下文
      * @param mAgreementUrl  用户协议
      * @param mPrivacyUrl    隐私协议
      * @param googleClientID googleClientID
      * @param LTAppID        乐推AppID
      * @param LTAppKey       乐推AppKey
+     * @param mPackageID
      */
     public void loginOut(final Activity activity, final String mAgreementUrl, final String mPrivacyUrl,
                           final String googleClientID, final String LTAppID, final String LTAppKey,
-                          final String adID, final int mPackageID) {
+                          final String adID, final String mPackageID) {
         PreferencesUtils.remove(activity, Constants.USER_LT_UID);
         PreferencesUtils.remove(activity, Constants.USER_LT_UID_TOKEN);
         LoginManager.getInstance().logOut();
@@ -137,7 +137,7 @@ public class LoginUIManager {
      * @param LTAppKey       乐推AppKey
      */
     private void login(Activity activity, String mAgreementUrl, String mPrivacyUrl, String googleClientID,
-                       String LTAppID, String LTAppKey, String adID, int mPackageID) {
+                       String LTAppID, String LTAppKey, String adID, String mPackageID) {
         Intent intent = new Intent(activity, LoginActivity.class);
         Bundle bundle = new Bundle();
         bundle.putString("mAgreementUrl", mAgreementUrl);
@@ -146,7 +146,7 @@ public class LoginUIManager {
         bundle.putString("LTAppID", LTAppID);
         bundle.putString("LTAppKey", LTAppKey);
         bundle.putString("adID", adID);
-        bundle.putInt("packageID", mPackageID);
+        bundle.putString("packageID", mPackageID);
         intent.putExtra("bundleData", bundle);
         activity.startActivity(intent);
     }

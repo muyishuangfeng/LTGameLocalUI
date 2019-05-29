@@ -20,7 +20,7 @@ public class LoginFailedFragment extends BaseFragment {
     String LTAppID;
     String LTAppKey;
     String mAdID;
-    int mPackageID;
+    String mPackageID;
     ProgressView mPgbLoading;
 
     public static LoginFailedFragment newInstance(BundleData data) {
